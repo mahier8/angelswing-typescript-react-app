@@ -2,7 +2,7 @@ export interface SidebarItem {
     title: string;
     path: string;
     icon: any;
-    iconOpen?: any; 
+    iconOpened?: any;
     iconClosed?: any;
     subnav?: SidebarItem[];
 }
