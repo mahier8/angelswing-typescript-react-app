@@ -1,46 +1,49 @@
-import React, { FC, useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { SidebarItem } from '../models/SidebarItem';
+import React, { FC, useState } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { SidebarItem } from "../models/SidebarItem";
 
 type SidebarLinkProps = {
-    item: SidebarItem;
+  item: SidebarItem;
 };
 
 const SidebarLink = styled(Link)`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 3.75rem;
-    font-size: 1.125rem;
-    padding: 2rem;
-    text-decoration: none;
-    color: #ffffff;
-    &:hover {
-        background-color: #1f1f1b;
-        border-left: 4px solid #6d44dc;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.75rem;
+  width: 15px;
+  font-size: 1.125rem;
+  padding: 2rem;
+  text-decoration: none;
+  color: #ffffff;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-const SidebarLabel = styled.span`
-    margin-left: 1rem;
-`;
+const SidebarLabel = styled.span``;
 
+const IconOuter = styled.span`
+  background-color: #1f4782;
+  border-radius: 5px;
+  padding: 10px;
+`;
 
 const Submenu: FC<SidebarLinkProps> = ({ item }) => {
-    const [subnav, setSubnav] = useState(false);
-    const showSubnav = () => setSubnav(!subnav);
+  const [subnav, setSubnav] = useState(false);
+  const showSubnav = () => setSubnav(!subnav);
 
-    return (
-        <>
-            <SidebarLink to={item.path} onClick={showSubnav}>
-                <div>
-                    {item.icon}
-                    <SidebarLabel>{item.title}</SidebarLabel>
-                </div>
-            </SidebarLink>
-        </>
-    );
+  return (
+    <>
+      <SidebarLink to={item.path} onClick={showSubnav}>
+        <IconOuter>
+          {item.icon}
+          <SidebarLabel>{item.title}</SidebarLabel>
+        </IconOuter>
+      </SidebarLink>
+    </>
+  );
 };
 
 export default Submenu;

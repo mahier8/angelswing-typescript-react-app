@@ -1,24 +1,20 @@
-import {
-    AiOutlineHistory,
-    AiOutlineHome,
-} from 'react-icons/ai';
-import { FaOpencart } from 'react-icons/fa';
+import { FaMap, FaRuler, FaLayerGroup } from 'react-icons/fa';
 import { SidebarItem } from '../models/SidebarItem';
 
 export const SidebarData: SidebarItem[] = [
     {
-        title: 'Home',
+        title: '',
         path: '/',
-        icon: <AiOutlineHome />,
+        icon: <FaMap />,
     },
     {
-        title: 'Order',
+        title: '',
         path: '/order',
-        icon: <FaOpencart />
+        icon: <FaRuler />
     },
     {
-        title: 'History',
+        title: '',
         path: '/history',
-        icon: <AiOutlineHistory />
+        icon: <FaLayerGroup />
     },
 ];
